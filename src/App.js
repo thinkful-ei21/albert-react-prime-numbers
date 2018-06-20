@@ -4,16 +4,16 @@ import './App.css';
 import UserInput from './components/user-input.js'
 import ResultDisplay from './components/result-display.js'
 
-export default class App extends React.Component {
+export default class App extends React.Component {  // 'extends' subclasses the React.Component
   constructor(props) {
-    super(props);
+    super(props);  // props are IMMUTABLE...so modify this.state instead
     this.state = {
       inputValue: 0
     };
   }
 
-  getNumber(userValue) {
-    this.setState({
+  setNumber(userValue) {
+    this.setState({ // setState changes this.state, and will force a re-render
       inputValue: userValue
     })
   }
@@ -21,9 +21,9 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>GET All PRIME NUMBERS</h1>
+        <h1>GENERATE PRIME NUMBERS</h1>
         <UserInput
-          getNumber={userValue => this.getNumber(userValue)}
+          captureNumber={userValue => this.setNumber(userValue)}
         />
         <ResultDisplay
           inputValue={this.state.inputValue}

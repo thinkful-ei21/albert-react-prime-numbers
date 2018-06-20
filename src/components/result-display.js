@@ -9,7 +9,7 @@ export default function ResultDisplay(props) {
     return <p>Choose a positive whole number between 1 and {upperLimit}!</p>
   }
   if (props.inputValue > upperLimit) {
-    return <p>Keep your number below {upperLimit} so your computer doesn't blow up...</p>
+    return <p>Keep your number below {upperLimit} so your computer does not blow up...</p>
   }
   if (props.inputValue % 1) {
     return <p>Error: Input must be a whole number!</p>
